@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MultiModuleSample</string>
+    <string name="title_photo">Photo</string>
+    <string name="title_photo_remote">Photo-Remote</string>
+</resources>
