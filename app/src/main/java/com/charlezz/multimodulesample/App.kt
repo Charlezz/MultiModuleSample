@@ -1,13 +1,14 @@
 package com.charlezz.multimodulesample
 
-import android.app.Activity
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
 import com.charlezz.core.di.CoreComponent
 import com.charlezz.core.di.DaggerCoreComponent
+import com.charlezz.multimodulesample.app.dep.AppDependencies
+import com.charlezz.multimodulesample.app.dep.AppDependenciesProvider
 
-class App : Application() {
+class App : Application(), AppDependenciesProvider {
 
     private val coreComponent: CoreComponent by lazy{
         DaggerCoreComponent.factory().create(this)
@@ -18,11 +19,6 @@ class App : Application() {
         MultiDex.install(this)
     }
 
-    companion object{
-        @JvmStatic
-        fun coreComponent(context:Context) = (context.applicationContext as App).coreComponent
-    }
+    override fun appDependencies(): AppDependencies = coreComponent
 
 }
-
-fun Activity.coreComponent() = App.coreComponent(this)

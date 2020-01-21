@@ -14,7 +14,19 @@
     </dist:module>
 
     <application>
-        <activity android:name=".PhotoActivity"></activity>
+        <activity android:name=".PhotoActivity">
+            <intent-filter>
+                <data
+                    android:scheme="${COMMON_SCHEME}"
+                    android:host="${PHOTO_HOST}"
+                    />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

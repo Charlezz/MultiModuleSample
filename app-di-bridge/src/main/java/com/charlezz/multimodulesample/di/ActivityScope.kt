@@ -1,7 +1,7 @@
-package com.charlezz.core.di
+package com.charlezz.multimodulesample.di
 
 import javax.inject.Scope
 
 @Scope
 @kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
-annotation class FragmentScope
+annotation class ActivityScope

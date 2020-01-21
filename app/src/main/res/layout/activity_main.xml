@@ -2,7 +2,7 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-        <import type="com.charlezz.multimodulesample.MainMenu"/>
+        <import type="com.charlezz.multimodulesample.Photo"/>
         <variable
             name="viewModel"
             type="com.charlezz.multimodulesample.MainViewModel" />
@@ -16,7 +16,7 @@
         <Button
             android:id="@+id/btn_photo"
             android:text="Photo"
-            android:onClick="@{(v)->viewModel.onClick(MainMenu.PHOTO_ACTIVITY)}"
+            android:onClick="@{(v)->viewModel.onClick(Photo.INSTANCE)}"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"

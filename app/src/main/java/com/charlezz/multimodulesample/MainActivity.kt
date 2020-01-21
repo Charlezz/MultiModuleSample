@@ -1,11 +1,13 @@
 package com.charlezz.multimodulesample
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
+import com.charlezz.multimodulesample.app.dep.appDependencies
 import com.charlezz.multimodulesample.databinding.ActivityMainBinding
 import javax.inject.Inject
 
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         DaggerMainComponent.factory()
             .create(
-                coreComponent(),
+                appDependencies(),
                 MainModule(),
                 this
             )
@@ -32,9 +34,7 @@ class MainActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
         viewModel.clickEvent.observe(this, Observer {
-            when (it) {
-                MainMenu.PHOTO_ACTIVITY->startActivity(Intent(this, Class.forName(it.canonicalName)))
-            }
+            startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("${it.scheme}://${it.host}")))
         })
     }
 }

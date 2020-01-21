@@ -2,6 +2,7 @@ apply plugin: 'com.android.dynamic-feature'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply from: '../deeplink.gradle'
 android {
     compileSdkVersion 29
 
@@ -13,6 +14,7 @@ android {
         versionName "1.0"
 
     }
+
     dataBinding {
         enabled = true
     }
@@ -28,6 +30,7 @@ kapt {
 }
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':app-di-bridge')
     implementation project(':app')
     implementation project(':core')
 

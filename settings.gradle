@@ -1,2 +1,2 @@
-include ':app', ':photo', ':core'
+include ':app', ':photo', ':core', 'app-di-bridge', 'app-di'
 rootProject.name='MultiModuleSample'

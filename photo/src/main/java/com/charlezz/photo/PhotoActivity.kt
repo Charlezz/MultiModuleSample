@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
-import com.charlezz.multimodulesample.coreComponent
+import com.charlezz.multimodulesample.app.dep.appDependencies
 import com.charlezz.photo.databinding.ActivityPhotoBinding
 import io.reactivex.Single
 import io.reactivex.disposables.CompositeDisposable
@@ -39,8 +39,7 @@ class PhotoActivity : AppCompatActivity() {
 
         DaggerPhotoComponent.factory()
             .create(
-                coreComponent(),
-                PhotoModule(),
+                appDependencies(),
                 this
             )
             .inject(this)

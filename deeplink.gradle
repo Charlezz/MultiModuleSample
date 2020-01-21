@@ -1,0 +1,26 @@
+ext {
+
+    common = [
+            COMMON_SCHEME : "common"
+    ]
+
+    main = [
+            MAIN_HOST : "main"
+    ]
+
+    photo = [
+            PHOTO_HOST : "photo",
+    ]
+
+    deeplinks = common + main + photo
+}
+
+android {
+    defaultConfig {
+
+        manifestPlaceholders += deeplinks
+        deeplinks.each {
+            buildConfigField "String", "${it.key}", "\"${it.value}\""
+        }
+    }
+}

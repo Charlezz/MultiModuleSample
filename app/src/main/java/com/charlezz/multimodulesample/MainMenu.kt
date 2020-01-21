@@ -1,6 +1,4 @@
 package com.charlezz.multimodulesample
 
-enum class MainMenu(val canonicalName: String){
-    PHOTO_ACTIVITY("com.charlezz.photo.PhotoActivity");
-
-}
+sealed class Destination(val scheme:String, val host:String)
+object Photo: Destination(BuildConfig.COMMON_SCHEME, BuildConfig.PHOTO_HOST)

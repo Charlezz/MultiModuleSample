@@ -3,7 +3,7 @@ package com.charlezz.photo
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.paging.LivePagedListBuilder
-import com.charlezz.core.di.ActivityScope
+import com.charlezz.multimodulesample.di.ActivityScope
 import javax.inject.Inject
 
 @ActivityScope
