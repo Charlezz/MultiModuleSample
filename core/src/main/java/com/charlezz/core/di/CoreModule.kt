@@ -3,6 +3,6 @@ package com.charlezz.core.di
 import dagger.Module
 
 @Module
-abstract class AppModule {
+abstract class CoreModule {
 
 }
