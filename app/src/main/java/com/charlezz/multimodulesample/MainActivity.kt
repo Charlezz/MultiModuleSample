@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         DaggerMainComponent.factory()
             .create(
-                (application as App).appComponent,
+                coreComponent(),
                 MainModule(),
                 this
             )

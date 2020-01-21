@@ -1,8 +1,8 @@
 package com.charlezz.photo
 
 import androidx.recyclerview.widget.DiffUtil
+import com.charlezz.core.di.ActivityScope
 import com.charlezz.core.ui.PagedSingleItemAdapter
-import com.charlezz.multimodulesample.di.ActivityScope
 import com.charlezz.photo.databinding.ViewPhotoBinding
 import javax.inject.Inject
 

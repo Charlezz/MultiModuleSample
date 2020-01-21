@@ -1,4 +1,4 @@
-package com.charlezz.multimodulesample.di
+package com.charlezz.core.di
 
 import android.app.Application
 import dagger.BindsInstance
@@ -7,13 +7,13 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(modules = [AppModule::class])
-interface AppComponent{
+interface CoreComponent{
 
-    fun getApplication():Application
+    fun getApplication(): Application
 
     @Component.Factory
     interface Factory{
-        fun create(@BindsInstance application: Application):AppComponent
+        fun create(@BindsInstance application: Application): CoreComponent
     }
 
 }

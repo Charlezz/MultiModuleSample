@@ -1,21 +1,28 @@
 package com.charlezz.multimodulesample
 
+import android.app.Activity
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
-import com.charlezz.multimodulesample.di.AppComponent
-import com.charlezz.multimodulesample.di.DaggerAppComponent
+import com.charlezz.core.di.CoreComponent
+import com.charlezz.core.di.DaggerCoreComponent
 
 class App : Application() {
 
-    lateinit var appComponent:AppComponent
-    override fun onCreate() {
-        super.onCreate()
-        appComponent = DaggerAppComponent.factory().create(this)
+    private val coreComponent: CoreComponent by lazy{
+        DaggerCoreComponent.factory().create(this)
     }
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)
         MultiDex.install(this)
     }
+
+    companion object{
+        @JvmStatic
+        fun coreComponent(context:Context) = (context.applicationContext as App).coreComponent
+    }
+
 }
+
+fun Activity.coreComponent() = App.coreComponent(this)

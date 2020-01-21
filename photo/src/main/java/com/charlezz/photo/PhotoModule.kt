@@ -3,7 +3,7 @@ package com.charlezz.photo
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.charlezz.multimodulesample.di.ActivityScope
+import com.charlezz.core.di.ActivityScope
 import com.charlezz.photo.databinding.ActivityPhotoBinding
 import dagger.Module
 import dagger.Provides

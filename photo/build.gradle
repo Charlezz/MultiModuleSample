@@ -29,7 +29,7 @@ kapt {
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':app')
-    implementation project(path: ':core')
+    implementation project(':core')
 
     kapt 'androidx.room:room-compiler:2.2.3'
     kapt "com.google.dagger:dagger-android-processor:2.24"

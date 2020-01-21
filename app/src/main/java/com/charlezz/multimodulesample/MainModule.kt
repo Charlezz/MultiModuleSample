@@ -3,8 +3,8 @@ package com.charlezz.multimodulesample
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.charlezz.core.di.ActivityScope
 import com.charlezz.multimodulesample.databinding.ActivityMainBinding
-import com.charlezz.multimodulesample.di.ActivityScope
 import dagger.Module
 import dagger.Provides
 

@@ -1,4 +1,4 @@
-package com.charlezz.multimodulesample.di
+package com.charlezz.core.di
 
 import dagger.Module
 
